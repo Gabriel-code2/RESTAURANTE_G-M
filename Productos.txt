@@ -1,0 +1,5 @@
+1; Prueba; ; 22; 200; Si
+33; Prueba; ; 1; 345;  NO 
+87; Descrip; ; 2; 32; Si
+45; Descripcion; ; 1; 23; Si
+11; Prueba; ; 2; 235;  NO 
