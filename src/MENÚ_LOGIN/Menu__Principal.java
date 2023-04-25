@@ -7,6 +7,7 @@ package MENÚ_LOGIN;
 
 import MANTENIMIENTOS.Cliente;
 import MANTENIMIENTOS.Comentario;
+import MANTENIMIENTOS.Empleado;
 import MANTENIMIENTOS.Mesa;
 import MANTENIMIENTOS.Producto;
 import MANTENIMIENTOS.Reservas;
@@ -46,22 +47,23 @@ public class Menu__Principal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        usuario = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        menuProcesos = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 255, 204));
 
         jLabel1.setBackground(new java.awt.Color(102, 102, 102));
         jLabel1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 85)); // NOI18N
@@ -121,15 +123,15 @@ public class Menu__Principal extends javax.swing.JFrame {
         jMenu1.setText("Mantenimientos   ");
         jMenu1.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
 
-        jMenuItem1.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/usuario (4).png"))); // NOI18N
-        jMenuItem1.setText("Usuarios");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        usuario.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/usuario (4).png"))); // NOI18N
+        usuario.setText("Usuarios");
+        usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                usuarioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(usuario);
 
         jMenuItem2.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/chat-de-burbujas.png"))); // NOI18N
@@ -164,28 +166,32 @@ public class Menu__Principal extends javax.swing.JFrame {
         jMenuItem5.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/empleado.png"))); // NOI18N
         jMenuItem5.setText("Empleados");
-        jMenu1.add(jMenuItem5);
-
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/productos.png"))); // NOI18N
-        jMenu4.setText("Productos");
-        jMenu4.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu4ActionPerformed(evt);
+                jMenuItem5ActionPerformed(evt);
             }
         });
+        jMenu1.add(jMenuItem5);
 
-        jMenuItem6.setFont(new java.awt.Font("Leelawadee UI", 0, 18)); // NOI18N
+        jMenuItem1.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/productos.png"))); // NOI18N
+        jMenuItem1.setText("Productos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem6.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/productos.png"))); // NOI18N
-        jMenuItem6.setText("Tipos");
+        jMenuItem6.setText("Tipos de Productos");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem6ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem6);
-
-        jMenu1.add(jMenu4);
+        jMenu1.add(jMenuItem6);
 
         jMenuItem7.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/calendario.png"))); // NOI18N
@@ -225,10 +231,15 @@ public class Menu__Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setForeground(new java.awt.Color(51, 51, 51));
-        jMenu3.setText("Procesos   ");
-        jMenu3.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
-        jMenuBar1.add(jMenu3);
+        menuProcesos.setForeground(new java.awt.Color(51, 51, 51));
+        menuProcesos.setText("Procesos   ");
+        menuProcesos.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jMenuBar1.add(menuProcesos);
+
+        jMenu5.setForeground(new java.awt.Color(51, 51, 51));
+        jMenu5.setText("Consultas   ");
+        jMenu5.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -240,7 +251,7 @@ public class Menu__Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -270,13 +281,13 @@ public class Menu__Principal extends javax.swing.JFrame {
         ES.setVisible(true);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
         Usuario U = new Usuario();
         U.setVisible(true);
 
 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_usuarioActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Comentario C = new Comentario();
@@ -295,11 +306,6 @@ public class Menu__Principal extends javax.swing.JFrame {
         C.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-       Producto VM = new Producto();
-        VM.setVisible(true);
-    }//GEN-LAST:event_jMenu4ActionPerformed
-
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
          Reservas R = new Reservas();
         R.setVisible(true);
@@ -309,6 +315,19 @@ public class Menu__Principal extends javax.swing.JFrame {
         Pedidos P = new Pedidos();
         P.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Empleado E = new Empleado();
+        E.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       
+         Producto VM = new Producto();
+        VM.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,8 +370,7 @@ public class Menu__Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -364,5 +382,7 @@ public class Menu__Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel2;
+    public static javax.swing.JMenu menuProcesos;
+    public static javax.swing.JMenuItem usuario;
     // End of variables declaration//GEN-END:variables
 }

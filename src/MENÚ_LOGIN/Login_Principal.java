@@ -198,11 +198,11 @@ public class Login_Principal extends javax.swing.JFrame {
                     if (auxLogin.equals(txtUsuario.getText()) && auxPass.equals(contraseña.getText())) {
                         Nivel = Integer.parseInt(s1.next());
                         String Nombre = s1.next();
-                        Menu_Principal m = new Menu_Principal();
+                        Menu__Principal m = new Menu__Principal();
                         
                         if (Nivel == 1) {
-                            Menu_Principal.menuProcesos.setEnabled(false);
-                            Menu_Principal.usuario.setEnabled(false);
+                            Menu__Principal.menuProcesos.setEnabled(false);
+                            Menu__Principal.usuario.setEnabled(false);
 
                             
                             
