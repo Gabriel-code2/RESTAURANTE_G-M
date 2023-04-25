@@ -1,7 +1,6 @@
 package MANTENIMIENTOS;
 
 
-import MENÚ_LOGIN.Menu_Principal;
 import ARCHIVOS.Archivo_Usuario;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
@@ -312,7 +311,11 @@ public class Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_CajaTextoContrasenaActionPerformed
 
     private void CajaTextoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTextoUsuarioActionPerformed
-
+         if (evt.getSource() == CajaTextoUsuario) {
+             
+             CajaTextoContrasena.grabFocus();
+         }
+        
     }//GEN-LAST:event_CajaTextoUsuarioActionPerformed
 
 

@@ -5,9 +5,7 @@ package MANTENIMIENTOS;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import ARCHIVOS.ArchivoReserva;
-import MENÚ_LOGIN.Menu_Principal;
 import MANTENIMIENTOS.Cliente;
 import java.awt.event.ActionEvent;
 import java.io.File;
@@ -38,7 +36,8 @@ public class Reservas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        botones = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,7 +52,7 @@ public class Reservas extends javax.swing.JFrame {
         cajaIdMesa = new javax.swing.JTextField();
         cajaFechaReserva = new javax.swing.JTextField();
         cajaHora = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        NO = new javax.swing.JRadioButton();
         Si = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -137,13 +136,17 @@ public class Reservas extends javax.swing.JFrame {
         cajaHora.setFont(new java.awt.Font("Liberation Mono", 0, 16)); // NOI18N
         cajaHora.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
-        jRadioButton1.setBackground(new java.awt.Color(51, 204, 255));
-        jRadioButton1.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
-        jRadioButton1.setText("NO");
+        NO.setBackground(new java.awt.Color(51, 204, 255));
+        botones.add(NO);
+        NO.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        NO.setText("NO");
+        NO.setEnabled(false);
 
         Si.setBackground(new java.awt.Color(51, 204, 255));
+        botones.add(Si);
         Si.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
         Si.setText("Si");
+        Si.setEnabled(false);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar.png"))); // NOI18N
@@ -174,7 +177,7 @@ public class Reservas extends javax.swing.JFrame {
 
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(51, 204, 255));
-        estado.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        estado.setFont(new java.awt.Font("Liberation Mono", 1, 24)); // NOI18N
         estado.setForeground(new java.awt.Color(255, 0, 0));
         estado.setBorder(null);
 
@@ -215,7 +218,7 @@ public class Reservas extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(Si)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton1))
+                                        .addComponent(NO))
                                     .addComponent(cajaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(2, 2, 2)
@@ -273,7 +276,7 @@ public class Reservas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(Si)
-                    .addComponent(jRadioButton1))
+                    .addComponent(NO))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -318,9 +321,10 @@ public class Reservas extends javax.swing.JFrame {
     private void IDReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDReservaActionPerformed
         if (evt.getSource() == IDReserva) {
             int cod;
+            boolean encontrado = false;
 
             cod = Integer.parseInt(IDReserva.getText());
-
+            String ST = "Disponible";
             Scanner s;
 
             try {
@@ -342,6 +346,12 @@ public class Reservas extends javax.swing.JFrame {
                                 cajaIdMesa.setText(sl.next());
                                 cajaFechaReserva.setText(sl.next());
                                 cajaHora.setText(sl.next());
+
+                                if (ST.equals(sl.next())) {
+                                    Si.setSelected(true);
+                                } else {
+                                    NO.setSelected(true);
+                                }
 
                                 encontrado = true;
                                 creear = true;
@@ -385,6 +395,7 @@ public class Reservas extends javax.swing.JFrame {
         cajaFechaReserva.setText("");
         cajaHora.setText("");
         estado.setText("");
+        botones.clearSelection();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -400,13 +411,6 @@ public class Reservas extends javax.swing.JFrame {
 
         } else {
 
-//            String auxDisponible = "";
-//
-//            if (Si.isSelected()) {
-//                auxDisponible = "Disponible";
-//            } else {
-//                auxDisponible = " NO Disponible";
-//            }
             String Id = "";
             String fecha = "", Idcliente = "", Idmesa = "";
             String fechaR = "", hora = "";
@@ -414,6 +418,7 @@ public class Reservas extends javax.swing.JFrame {
 
             ArchivoReserva archivo = new ArchivoReserva();
 
+            Si.setSelected(true);
             Id = IDReserva.getText();
             fecha = cajaFecha.getText();
             Idcliente = cajaIdCliente.getText();
@@ -421,12 +426,20 @@ public class Reservas extends javax.swing.JFrame {
             fechaR = cajaFechaReserva.getText();
             hora = cajaHora.getText();
 
+            String auxDisponible = "";
+
+            if (Si.isSelected()) {
+                auxDisponible = "Disponible";
+            } else {
+                auxDisponible = " NO Disponible";
+            }
+
             try {
 
                 if (creear == false) {
-                    archivo.GuardarDatos(Id, fecha, Idcliente, Idmesa, fechaR, hora);
+                    archivo.GuardarDatos(Id, fecha, Idcliente, Idmesa, fechaR, hora, auxDisponible);
                 } else {
-                    Snuevalinea = (Id + " ; " + fecha + " ; " + Idcliente + " ; " + Idmesa + " ; " + fechaR + " ; " + hora);
+                    Snuevalinea = (Id + " ; " + fecha + " ; " + Idcliente + " ; " + Idmesa + " ; " + fechaR + " ; " + hora + " ; " + auxDisponible);
                     archivo.Modificar(Santigualinea, Snuevalinea);
                 }
 
@@ -503,7 +516,8 @@ public class Reservas extends javax.swing.JFrame {
             String nombreTipo = "";
 
             boolean encontrado = false;
-            boolean status = false;
+            String status = "NO";
+            String comersales = "";
 
             try {
                 int Id_Tipo = Integer.parseInt(auxid);
@@ -519,9 +533,9 @@ public class Reservas extends javax.swing.JFrame {
 
                             if (Id_Tipo == Integer.parseInt(s1.next())) {
                                 encontrado = true;
-                                nombreTipo = s1.next();
-                                
-                                if (s1.equals(status)) {
+
+                                if (status.equals(s1.next())) {
+
                                     JOptionPane.showMessageDialog(rootPane, "La Mesa esta Disponible");
 
                                 }
@@ -531,14 +545,13 @@ public class Reservas extends javax.swing.JFrame {
                         s.close();
 
                         if (!encontrado) {
-                            JOptionPane.showMessageDialog(rootPane, "La Mesa NO esta Disponible");
+                            JOptionPane.showMessageDialog(rootPane, "LA MESA NO EXISTE");
 
-                        } else {
-                            JOptionPane.showMessageDialog(rootPane, "El Nombre del cliente es: " + nombreTipo);
                         }
 
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "El clinete no Existe");
+                        JOptionPane.showMessageDialog(rootPane, "La mesa no existe");
+
                     }
                 } catch (IOException e) {
                     System.out.println("No se pudo leer el archivo correctamente\n" + e);
@@ -589,8 +602,10 @@ public class Reservas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField IDReserva;
+    private javax.swing.JRadioButton NO;
     private javax.swing.JRadioButton Si;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup botones;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField cajaFecha;
     private javax.swing.JTextField cajaFechaReserva;
     private javax.swing.JTextField cajaHora;
@@ -611,6 +626,5 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,7 +1,5 @@
 package CONSULTAS;
 
-
-import MENÚ_LOGIN.Menu_Principal;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,14 +11,13 @@ import javax.swing.table.DefaultTableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Usuario
  */
 public class VentanaDeEmpleados extends javax.swing.JFrame {
- 
-     DefaultTableModel modelo = new DefaultTableModel();
+
+    DefaultTableModel modelo = new DefaultTableModel();
 
     /**
      * Creates new form VentanaDeClientes
@@ -31,51 +28,49 @@ public class VentanaDeEmpleados extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         cargarModelo();
     }
-    
-    
-    private void cargarModelo(){
-        
-        try{
-           
-           
+
+    private void cargarModelo() {
+
+        try {
+
             modelo.addColumn("ID");
             modelo.addColumn("Nombre");
-            modelo.addColumn("Primer Apellido");
+            modelo.addColumn("TP Empleado");
+
             modelo.addColumn("Segundo Apellido");
-            modelo.addColumn("Tipo de Empleado");
+            modelo.addColumn("Primer Apellido");
+
             modelo.addColumn("Propinas");
             modelo.addColumn("Foto");
             modelo.addColumn("Porcentaje de propinas");
 
-
             tablaRegistros.setModel(modelo);
             cargarArchivo();
-            
-        }catch(IOException e){
+
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
-    
-    private void cargarArchivo() throws IOException{
+
+    private void cargarArchivo() throws IOException {
         String fila[];
-        
-        try{
-           
+
+        try {
+
             FileReader archivo = new FileReader("Empleados.txt");
             BufferedReader lectura = new BufferedReader(archivo);
-            
+
             String linea = lectura.readLine();
-           
-            
-            while(linea != null){
-                 fila = linea.split(";");
-                 modelo.addRow(fila);
-                 linea = lectura.readLine();
+
+            while (linea != null) {
+                fila = linea.split(";");
+                modelo.addRow(fila);
+                linea = lectura.readLine();
             }
-            
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       }
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
     }
 
     /**
@@ -95,12 +90,13 @@ public class VentanaDeEmpleados extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 52)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 58)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Empleados Registrados");
 
+        tablaRegistros.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
         tablaRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -133,15 +129,15 @@ public class VentanaDeEmpleados extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(217, 217, 217)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(434, 434, 434)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(96, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 884, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +148,7 @@ public class VentanaDeEmpleados extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

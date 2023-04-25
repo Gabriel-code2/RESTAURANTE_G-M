@@ -2,7 +2,6 @@ package MOVIMIENTOS;
 
 import ARCHIVOS.ArchivoPedidos;
 import MANTENIMIENTOS.Cliente;
-import MENÚ_LOGIN.Menu_Principal;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -189,7 +188,7 @@ public class Pedidos extends javax.swing.JFrame {
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(51, 204, 255));
         estado.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        estado.setForeground(new java.awt.Color(204, 0, 0));
+        estado.setForeground(new java.awt.Color(255, 0, 0));
         estado.setBorder(null);
 
         jLabel12.setFont(new java.awt.Font("Leelawadee UI", 1, 16)); // NOI18N
@@ -449,6 +448,7 @@ public class Pedidos extends javax.swing.JFrame {
             int cod;
 
             cod = Integer.parseInt(Idpedido.getText());
+                boolean encontrado = false;
 
             Scanner s;
 
@@ -568,66 +568,6 @@ public class Pedidos extends javax.swing.JFrame {
             }
         }
         
-        
-        
-//        
-//         if (evt.getSource() == idcliente) {
-//            String auxid = idcliente.getText();
-//
-//            String nombreTipo = "";
-//
-//            boolean encontrado = false;
-//            try {
-//                int Id_Tipo = Integer.parseInt(auxid);
-//                try {
-//                    File f = new File("Clientes.txt");
-//                    Scanner s = new Scanner(f);
-//                    if (f.exists()) {
-//
-//                        while (s.hasNextLine() && !encontrado) {
-//                            String linea = s.nextLine();
-//                            Scanner s1 = new Scanner(linea);
-//                            s1.useDelimiter("\\s*;\\s*");
-//
-//                            if (Id_Tipo == Integer.parseInt(s1.next())) {
-//                                encontrado = true;
-//                                nombreTipo = s1.next();
-//                             
-//
-//                            }
-//
-//                        }
-//                        s.close();
-//
-//                        if (!encontrado) {
-//                            JOptionPane.showMessageDialog(this, "EL CLIENTE EXISTE", "Error", JOptionPane.ERROR_MESSAGE);
-//
-//                            JOptionPane.showMessageDialog(rootPane, "Por Favor creelo como nuevo");
-//
-//                            Cliente C = new Cliente();
-//                            C.setVisible(true);
-//                        } else {
-//                            JOptionPane.showMessageDialog(rootPane, "El Cliente hizo una Reserva el: " + nombreTipo);
-//                        
-//
-//                        }
-//
-//                    } else {
-//                        JOptionPane.showMessageDialog(rootPane, "El clinete no Existe");
-//                    }
-//                } catch (IOException e) {
-//                    System.out.println("No se pudo leer el archivo correctamente\n" + e);
-//                }
-//
-//            } catch (Exception ex) {
-//                idcliente.setText("");
-//                JOptionPane.showMessageDialog(rootPane, "No se permiten caracteres en el Id");
-//            }
-//        }
-//        
-//        
-
-
     }//GEN-LAST:event_idclienteActionPerformed
 
     private void idCamareroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCamareroActionPerformed
@@ -669,10 +609,7 @@ public class Pedidos extends javax.swing.JFrame {
                         if (!encontrado) {
                             JOptionPane.showMessageDialog(this, "El EMPLEADO NO EXISTE", "Error", JOptionPane.ERROR_MESSAGE);
 
-                        } else {
-                            JOptionPane.showMessageDialog(rootPane, " El Empleado No es Camarero ");
-
-                        }
+                        } 
 
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "El EMPLEADO NO EXISTE");

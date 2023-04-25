@@ -70,7 +70,7 @@
                                           <Component id="cajaAsunto" alignment="0" max="32767" attributes="0"/>
                                           <Component id="cajaFecha" min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="cajaId" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <Component id="CajaID" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
@@ -102,7 +102,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="estado" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="estado" min="-2" pref="166" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -124,7 +124,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="cajaId" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="CajaID" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                               <Component id="estado" alignment="0" min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
@@ -179,7 +179,7 @@
             <Property name="text" type="java.lang.String" value="ID Comentario:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cajaId">
+        <Component class="javax.swing.JTextField" name="CajaID">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Liberation Mono" size="14" style="0"/>
@@ -197,8 +197,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaIdActionPerformed"/>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cajaIdKeyReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CajaIDActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CajaIDKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -343,7 +343,7 @@
               <Color blue="ff" green="cc" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Liberation Mono" size="18" style="1"/>
+              <Font name="Microsoft YaHei UI" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>

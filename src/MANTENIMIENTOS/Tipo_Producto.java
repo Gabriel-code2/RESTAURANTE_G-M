@@ -2,7 +2,6 @@ package MANTENIMIENTOS;
 
 
 import ARCHIVOS.Archivo_TipoProducto;
-import MENÚ_LOGIN.Menu_Principal;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -247,6 +246,7 @@ public class Tipo_Producto extends javax.swing.JFrame {
             int cod;
 
                 cod = Integer.parseInt(IdProducto.getText());
+                    boolean encontrado = false;
 
                 Scanner s;
 

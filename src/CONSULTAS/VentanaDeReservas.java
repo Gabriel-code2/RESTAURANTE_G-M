@@ -1,7 +1,5 @@
 package CONSULTAS;
 
-
-import MENÚ_LOGIN.Menu_Principal;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class VentanaDeReservas extends javax.swing.JFrame {
 
-DefaultTableModel modelo = new DefaultTableModel();
+    DefaultTableModel modelo = new DefaultTableModel();
 
     public VentanaDeReservas() {
         initComponents();
@@ -19,47 +17,46 @@ DefaultTableModel modelo = new DefaultTableModel();
         cargarModelo();
     }
 
-    
-    private void cargarModelo(){
-        try{
-            
+    private void cargarModelo() {
+        try {
+
             modelo.addColumn("ID");
             modelo.addColumn("Fecha");
             modelo.addColumn("ID Cliente Reserva");
             modelo.addColumn("ID Mesa Reserva");
-            modelo.addColumn("Disponiblidad");
             modelo.addColumn("Fecha Reserva");
             modelo.addColumn("Hora");
+            modelo.addColumn("Status");
 
             tablaRegistros.setModel(modelo);
             cargarArchivo();
-            
-        }catch(IOException e){
+
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
-    
-    private void cargarArchivo() throws IOException{
+
+    private void cargarArchivo() throws IOException {
         String fila[];
-        
-        try{
-           
+
+        try {
+
             FileReader archivo = new FileReader("Reservas.txt");
             BufferedReader lectura = new BufferedReader(archivo);
-            
+
             String linea = lectura.readLine();
-           
-            
-            while(linea != null){
-                 fila = linea.split(";");
-                 modelo.addRow(fila);
-                 linea = lectura.readLine();
+
+            while (linea != null) {
+                fila = linea.split(";");
+                modelo.addRow(fila);
+                linea = lectura.readLine();
             }
-            
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       }
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,9 +69,9 @@ DefaultTableModel modelo = new DefaultTableModel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 52)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 58)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Reservas Registradas");
 
@@ -96,7 +93,7 @@ DefaultTableModel modelo = new DefaultTableModel();
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/salida-de-emergencia.png"))); // NOI18N
         jButton1.setText("Salir");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -110,26 +107,27 @@ DefaultTableModel modelo = new DefaultTableModel();
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(335, 335, 335)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(126, 126, 126))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

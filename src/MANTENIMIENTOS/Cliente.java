@@ -2,7 +2,6 @@ package MANTENIMIENTOS;
 
 
 import ARCHIVOS.ArchivoCliente;
-import MENÚ_LOGIN.Menu_Principal;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -91,7 +90,7 @@ public class Cliente extends javax.swing.JFrame {
 
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(51, 204, 255));
-        estado.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        estado.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         estado.setForeground(new java.awt.Color(255, 0, 0));
         estado.setBorder(null);
         estado.addActionListener(new java.awt.event.ActionListener() {
@@ -333,6 +332,7 @@ public class Cliente extends javax.swing.JFrame {
             int cod;
 
                 cod = Integer.parseInt(cajaId.getText());
+                    boolean encontrado = false;
 
                 Scanner s;
 

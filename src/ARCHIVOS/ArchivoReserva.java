@@ -21,13 +21,13 @@ import javax.swing.JOptionPane;
  */
 public class ArchivoReserva {
 
-    public void GuardarDatos(String Id, String fecha, String IdCliente, String IdMesa, String fechaReserva, String hora) throws IOException {
+    public void GuardarDatos(String Id, String fecha, String IdCliente, String IdMesa, String fechaReserva, String hora, String status) throws IOException {
 
         try {
             FileWriter F1 = new FileWriter("Reservas.txt", true);
 
             PrintWriter pw = new PrintWriter(F1);
-            pw.println(Id + " ; " + fecha + " ; " + IdCliente + " ; " + IdMesa + "; " + fechaReserva + "; " + hora);
+            pw.println(Id + " ; " + fecha + " ; " + IdCliente + " ; " + IdMesa + "; " + fechaReserva + "; " + hora + "; " +status);
             pw.close();
 
         } catch (Exception ex) {

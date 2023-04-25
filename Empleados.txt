@@ -1,5 +1,1 @@
-1; Gabriel; Tapia; De Jesus; Camarero; 200; 2x2; 
-2; Joselito; Ramos; Almontes; Mesero; 100; 2x2; 0
-33; Carlos; camarero; Montero; Canario; 400; 2x2; 0
-200; Jose; Camarero; Tapia; De Jesus; 200; 2x2; 0
-88; Carlitos; Camarero; Almonte; Garza; 100; Si; 0
+1; Manuel; Camarero; Alcantara; Ramos; 500; Foto :); 0

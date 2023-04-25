@@ -1,64 +1,59 @@
 package CONSULTAS;
 
-
-import MENÚ_LOGIN.Menu_Principal;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
 
-
 public class Ventana_mesa extends javax.swing.JFrame {
 
     DefaultTableModel modelo = new DefaultTableModel();
-    
+
     public Ventana_mesa() {
         initComponents();
-         setTitle("Mesas");
+        setTitle("Mesas");
         setLocationRelativeTo(null);
         cargarModelo();
     }
-    
-    
-    private void cargarModelo(){
-        try{
+
+    private void cargarModelo() {
+        try {
             modelo.addColumn("ID");
+            modelo.addColumn("Disponible");
+
             modelo.addColumn("Maximo Comersales");
             modelo.addColumn("Cantidad Comersales");
             modelo.addColumn("Numero de Mesas");
             tablamesas.setModel(modelo);
             cargarArchivo();
-            
-        }catch(IOException e){
+
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
-    
-    private void cargarArchivo() throws IOException{
+
+    private void cargarArchivo() throws IOException {
         String fila[];
-        
-        try{
-           
+
+        try {
+
             FileReader archivo = new FileReader("Mesa.txt");
             BufferedReader lectura = new BufferedReader(archivo);
-            
-            String linea = lectura.readLine();
-           
-            
-            while(linea != null){
-                 fila = linea.split(";");
-                 modelo.addRow(fila);
-                 linea = lectura.readLine();
-            }
-            
-       }catch(FileNotFoundException e){
-           System.out.println(e);
-       }
-    }
-    
 
-  
+            String linea = lectura.readLine();
+
+            while (linea != null) {
+                fila = linea.split(";");
+                modelo.addRow(fila);
+                linea = lectura.readLine();
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -71,10 +66,10 @@ public class Ventana_mesa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 52)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 58)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Mesas Registradas");
 
@@ -113,12 +108,13 @@ public class Ventana_mesa extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(281, 281, 281)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(118, 118, 118))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -45,14 +45,14 @@ public class Cobro_Pedido extends javax.swing.JFrame {
             PdfWriter.getInstance(documento, archivo);
             documento.open();
 
-            Paragraph parrafo = new Paragraph("<<--------GRACIAS POR SU COMPRA-------->>", tipoLetra);
+            Paragraph parrafo = new Paragraph("<<<<<< GRACIAS POR SU COMPRA >>>>>>>", tipoLetra);
             parrafo.setAlignment(1);
             documento.add(parrafo);
 
-            documento.add(new Paragraph("ID---->>: " + ID.getText()));
-            documento.add(new Paragraph("Total a pagar--->>: " + A_Pagar.getText()));
-            documento.add(new Paragraph("Resivido---->>: " + pago.getText()));
-            documento.add(new Paragraph("Devolver---->>: " + devuelta.getText()));
+            documento.add(new Paragraph("|ID del Pedido---->>:" + ID.getText()));
+            documento.add(new Paragraph("|Total a pagar--->>:" + A_Pagar.getText()));
+            documento.add(new Paragraph("|Resivido---->>:" + pago.getText()));
+            documento.add(new Paragraph("|Devolver---->>:" + devuelta.getText()));
 
 
 
@@ -160,7 +160,7 @@ public class Cobro_Pedido extends javax.swing.JFrame {
         devuelta.setEditable(false);
         devuelta.setBackground(new java.awt.Color(51, 204, 255));
         devuelta.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
-        devuelta.setForeground(new java.awt.Color(255, 255, 0));
+        devuelta.setForeground(new java.awt.Color(255, 51, 0));
         devuelta.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
         jLabel16.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
@@ -231,13 +231,13 @@ public class Cobro_Pedido extends javax.swing.JFrame {
                         .addComponent(devuelta, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(77, 77, 77))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel12))
                     .addComponent(jButton1))
-                .addGap(45, 45, 45)
+                .addGap(75, 75, 75)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -246,16 +246,17 @@ public class Cobro_Pedido extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jButton3)
-                        .addGap(65, 65, 65)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13)
-                        .addGap(106, 106, 106))))
+                        .addComponent(jLabel17)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel13)))
+                .addGap(56, 56, 56))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -313,9 +314,9 @@ public class Cobro_Pedido extends javax.swing.JFrame {
                                     .addComponent(jButton4)
                                     .addComponent(jButton3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel17)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
@@ -420,6 +421,7 @@ public class Cobro_Pedido extends javax.swing.JFrame {
             if (total >= P) {
 
                 JOptionPane.showMessageDialog(this, "El monto a pagar es mayor", "Error", JOptionPane.ERROR_MESSAGE);
+                pago.setText("");
 
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Gracias por su compra");

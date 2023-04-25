@@ -1,7 +1,6 @@
 package MANTENIMIENTOS;
 
 import ARCHIVOS.ArchivoEmpleados;
-import MENÚ_LOGIN.Menu_Principal;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -327,6 +326,7 @@ public class Empleado extends javax.swing.JFrame {
             cod = Integer.parseInt(cajaId.getText());
 
             Scanner s;
+                boolean encontrado = false;
 
             try {
                 File f = new File("Empleados.txt");

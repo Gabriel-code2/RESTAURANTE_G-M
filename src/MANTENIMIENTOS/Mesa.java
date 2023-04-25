@@ -1,8 +1,6 @@
 package MANTENIMIENTOS;
 
-
 import ARCHIVOS.Archivo_Mesa;
-import MENÚ_LOGIN.Menu_Principal;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,7 +22,7 @@ public class Mesa extends javax.swing.JFrame {
 
     boolean creear;
     boolean encontrado = false;
-    String Santigualinea;
+    String Santigualinea,Dispo;
     boolean auxDispo;
 
     public Mesa() {
@@ -101,6 +99,8 @@ public class Mesa extends javax.swing.JFrame {
             }
         });
 
+        IdMesa.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        IdMesa.setForeground(new java.awt.Color(51, 51, 51));
         IdMesa.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
         IdMesa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -108,10 +108,15 @@ public class Mesa extends javax.swing.JFrame {
             }
         });
 
+        MaxC.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        MaxC.setForeground(new java.awt.Color(51, 51, 51));
         MaxC.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
+        CantC.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        CantC.setForeground(new java.awt.Color(51, 51, 51));
         CantC.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
+        NumMesa.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
         NumMesa.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
         Disponible.setBackground(new java.awt.Color(51, 204, 255));
@@ -120,16 +125,16 @@ public class Mesa extends javax.swing.JFrame {
         Disponible.setText("Disponible");
         Disponible.setEnabled(false);
         Disponible.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
                 DisponibleAncestorRemoved(evt);
             }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
         });
 
-        estado.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        estado.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         estado.setForeground(new java.awt.Color(255, 0, 0));
 
         noDisponible.setBackground(new java.awt.Color(51, 204, 255));
@@ -139,12 +144,12 @@ public class Mesa extends javax.swing.JFrame {
         noDisponible.setText(" No Disponible");
         noDisponible.setEnabled(false);
         noDisponible.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
                 noDisponibleAncestorRemoved(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -295,6 +300,7 @@ public class Mesa extends javax.swing.JFrame {
         MaxC.setText("");
         CantC.setText("");
         NumMesa.setText("");
+        buttonGroup1.clearSelection();
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -325,13 +331,19 @@ public class Mesa extends javax.swing.JFrame {
                 Max = MaxC.getText();
                 Cant = CantC.getText();
                 Num = NumMesa.getText();
+                if (Disponible.isSelected()) {
+                    Dispo = "Si";
+                } else {
+                    Dispo = "NO";
+
+                }
 
                 try {
 
                     if (creear == false) {
-                        archivo.GuardarDatos(Id, Max, Cant, Num);
+                        archivo.GuardarDatos(Id, Dispo, Max, Cant, Num);
                     } else {
-                        Snuevalinea = (Id + "; " + Max + "; " + Cant + "; " + Num);
+                        Snuevalinea = (Id + "; " + Dispo + "; " + Max + "; " + Cant + "; " + Num);
                         archivo.Modificar(Santigualinea, Snuevalinea);
                     }
 
@@ -358,9 +370,10 @@ public class Mesa extends javax.swing.JFrame {
     private void IdMesaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IdMesaKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             int cod;
+                boolean encontrado = false;
 
             cod = Integer.parseInt(IdMesa.getText());
-
+            String ST = "NO";
             Scanner s;
 
             try {
@@ -378,6 +391,11 @@ public class Mesa extends javax.swing.JFrame {
                         try {
                             if (cod == Integer.parseInt(sl.next())) {
 
+                                if (ST.equals(sl.next())) {
+                                    noDisponible.setSelected(true);
+                                }else{
+                                    Disponible.setSelected(true);
+                                }
                                 MaxC.setText(sl.next());
                                 CantC.setText(sl.next());
 
@@ -386,7 +404,7 @@ public class Mesa extends javax.swing.JFrame {
                                 encontrado = true;
                                 creear = true;
 
-                                Santigualinea = IdMesa.getText() + " ; " + MaxC.getText() + " ; " + CantC.getText() + " ; " + NumMesa.getText();
+                                Santigualinea = IdMesa.getText() + " ; " +Dispo+ " ; " + MaxC.getText() + " ; " + CantC.getText() + " ; " + NumMesa.getText();
 
                                 estado.setText("MODIFICANDO");
 

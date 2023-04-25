@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
 
 public class Archivo_Mesa {
         
-     public void GuardarDatos(String IdMesa, String MaxC, String CantC, String NumMesa) throws IOException {
+     public void GuardarDatos(String IdMesa,String Disp, String MaxC, String CantC, String NumMesa) throws IOException {
 
         try {
             FileWriter F1 = new FileWriter("Mesa.txt", true);
 
             PrintWriter pw = new PrintWriter(F1);
-            pw.println(IdMesa + " ; " + MaxC + " ; " + CantC +";"  + NumMesa);
+            pw.println(IdMesa + " ; " + Disp + " ; " + MaxC + " ; " + CantC +";"  + NumMesa);
             pw.close();
 
         } catch (Exception ex) {

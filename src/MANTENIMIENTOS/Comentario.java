@@ -1,8 +1,6 @@
 package MANTENIMIENTOS;
 
-
 import ARCHIVOS.TxtComentario;
-import MENÚ_LOGIN.Menu_Principal;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +13,7 @@ public class Comentario extends javax.swing.JFrame {
     boolean creear;
     boolean encontrado = false;
     String Santigualinea;
-    
+
     public Comentario() {
         initComponents();
         setTitle("Comentario");
@@ -33,7 +31,7 @@ public class Comentario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cajaId = new javax.swing.JTextField();
+        CajaID = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         cajaCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -58,17 +56,17 @@ public class Comentario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel1.setText("ID Comentario:");
 
-        cajaId.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
-        cajaId.setForeground(new java.awt.Color(51, 51, 51));
-        cajaId.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
-        cajaId.addActionListener(new java.awt.event.ActionListener() {
+        CajaID.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaID.setForeground(new java.awt.Color(51, 51, 51));
+        CajaID.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
+        CajaID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaIdActionPerformed(evt);
+                CajaIDActionPerformed(evt);
             }
         });
-        cajaId.addKeyListener(new java.awt.event.KeyAdapter() {
+        CajaID.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                cajaIdKeyReleased(evt);
+                CajaIDKeyReleased(evt);
             }
         });
 
@@ -117,7 +115,7 @@ public class Comentario extends javax.swing.JFrame {
 
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(51, 204, 255));
-        estado.setFont(new java.awt.Font("Liberation Mono", 1, 18)); // NOI18N
+        estado.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         estado.setForeground(new java.awt.Color(255, 0, 0));
         estado.setBorder(null);
         estado.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +186,7 @@ public class Comentario extends javax.swing.JFrame {
                                         .addComponent(cajaCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(cajaAsunto)
                                         .addComponent(cajaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(cajaId, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CajaID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(143, 143, 143))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -211,7 +209,7 @@ public class Comentario extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +226,7 @@ public class Comentario extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addComponent(cajaId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CajaID, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
                         .addComponent(cajaCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,48 +273,46 @@ public class Comentario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-          if (cajaId.getText().equals("") || cajaFecha.getText().equals("") || cajaCorreo.getText().equals("") || cajaAsunto.getText().equals("") || cajaComentario.getText().equals("")){
+        if (CajaID.getText().equals("") || cajaFecha.getText().equals("") || cajaCorreo.getText().equals("") || cajaAsunto.getText().equals("") || cajaComentario.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Por Favor Rellene Todos los campos ");
 
-        } 
-        else {
-        
-        
-        String Id = "";
-        String correo = "", asunto = "", comentario = "";
-        String fecha = "";
-        String Snuevalinea = "";
-        
-        TxtComentario archivo = new TxtComentario();
-        
-        Id = cajaId.getText();
-        correo = cajaCorreo.getText();
-        asunto = cajaAsunto.getText();
-        comentario = cajaComentario.getText();
-        fecha = cajaFecha.getText();
-        
-                try {
+        } else {
 
-            if (creear == false) {
-                archivo.GuardarDatos(Id, correo, asunto, comentario, fecha);
-            } else {
-                Snuevalinea = (Id + " ; " + correo + " ; " + asunto + " ; " + comentario + " ; " + fecha);
-                archivo.Modificar(Santigualinea, Snuevalinea);
+            String Id = "";
+            String correo = "", asunto = "", comentario = "";
+            String fecha = "";
+            String Snuevalinea = "";
+
+            TxtComentario archivo = new TxtComentario();
+
+            Id = CajaID.getText();
+            correo = cajaCorreo.getText();
+            asunto = cajaAsunto.getText();
+            comentario = cajaComentario.getText();
+            fecha = cajaFecha.getText();
+
+            try {
+
+                if (creear == false) {
+                    archivo.GuardarDatos(Id, correo, asunto, comentario, fecha);
+                } else {
+                    Snuevalinea = (Id + " ; " + correo + " ; " + asunto + " ; " + comentario + " ; " + fecha);
+                    archivo.Modificar(Santigualinea, Snuevalinea);
+                }
+
+                CajaID.setText("");
+                cajaCorreo.setText("");
+                cajaAsunto.setText("");
+                cajaComentario.setText("");
+                cajaFecha.setText("");
+                estado.setText("");
+
+            } catch (IOException el) {
+                el.printStackTrace();
             }
+            JOptionPane.showMessageDialog(null, "Registro guardado");
 
-            cajaId.setText("");
-            cajaCorreo.setText("");
-            cajaAsunto.setText("");
-            cajaComentario.setText("");
-            cajaFecha.setText("");
-            estado.setText("");
-
-        }catch(IOException el) {
-            el.printStackTrace();
-        }  
-        JOptionPane.showMessageDialog(null, "Registro guardado");
-
-          }
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoActionPerformed
@@ -324,81 +320,78 @@ public class Comentario extends javax.swing.JFrame {
     }//GEN-LAST:event_estadoActionPerformed
 
     private void btnLimpiatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiatActionPerformed
-       cajaId.setText("");
-       cajaCorreo.setText("");
-       cajaAsunto.setText("");
-       cajaComentario.setText("");
-       cajaFecha.setText("");
-       estado.setText("");
+        CajaID.setText("");
+        cajaCorreo.setText("");
+        cajaAsunto.setText("");
+        cajaComentario.setText("");
+        cajaFecha.setText("");
+        estado.setText("");
     }//GEN-LAST:event_btnLimpiatActionPerformed
 
     private void estadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_estadoKeyReleased
 
     }//GEN-LAST:event_estadoKeyReleased
 
-    private void cajaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaIdActionPerformed
+    private void CajaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaIDActionPerformed
 
-    private void cajaIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaIdKeyReleased
-        
-         if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
-            int cod;
+        if (evt.getSource() == CajaID) {
 
-                cod = Integer.parseInt(cajaId.getText());
-
+            try {
                 Scanner s;
+                boolean encontrado = false;
 
-                try {
-                    File f = new File("Comentarios.txt");
-                    s = new Scanner(f);
-                    if (!f.exists()) {
+                int cod = Integer.parseInt(CajaID.getText());
+                File f = new File("Comentarios.txt");
+                s = new Scanner(f);
+                if (!f.exists()) {
 
-                        f.createNewFile();
+                    f.createNewFile();
 
-                    } else {
-                        while (s.hasNextLine() && !encontrado) {
-                            String linea = s.nextLine();
-                            Scanner sl = new Scanner(linea);
-                            sl.useDelimiter("\\s*;\\s*");
-                            try {
-                                if (cod == Integer.parseInt(sl.next())) {
-                                    cajaCorreo.setText(sl.next());
-                                    cajaAsunto.setText(sl.next());
-                                    cajaComentario.setText(sl.next());
-                                    cajaFecha.setText(sl.next());
-                                    encontrado = true;
-                                    creear = true;
+                } else {
+                    while (s.hasNextLine() && !encontrado) {
+                        String linea = s.nextLine();
+                        Scanner sl = new Scanner(linea);
+                        sl.useDelimiter("\\s*;\\s*");
+                        try {
+                            if (cod == Integer.parseInt(sl.next())) {
+                                cajaCorreo.setText(sl.next());
+                                cajaAsunto.setText(sl.next());
+                                cajaComentario.setText(sl.next());
+                                cajaFecha.setText(sl.next());
+                                encontrado = true;
+                                creear = true;
 
-                                    Santigualinea = cajaId.getText() + " ; " + cajaCorreo.getText() + " ; " + cajaAsunto.getText() + " ; " + cajaComentario.getText() + " ; " + cajaFecha.getText();
+                                Santigualinea = CajaID.getText() + " ; " + cajaCorreo.getText() + " ; " + cajaAsunto.getText() + " ; " + cajaComentario.getText() + " ; " + cajaFecha.getText();
 
-                                    estado.setText("MODIFICANDO");
+                                estado.setText("MODIFICANDO");
 
-                                } else {
+                            } else {
 
-                                    
-                                     cajaCorreo.setText("");
-                                     cajaAsunto.setText("");
-                                     cajaComentario.setText("");
-                                     cajaFecha.setText("");
-                                    encontrado = false;
-                                    creear = false;
-                                    estado.setText("CREANDO");
-                                }
-                            } catch (Exception el) {
-                                el.printStackTrace();
+                                cajaCorreo.setText("");
+                                cajaAsunto.setText("");
+                                cajaComentario.setText("");
+                                cajaFecha.setText("");
+                                encontrado = false;
+                                creear = false;
+                                estado.setText("CREANDO");
                             }
+                        } catch (Exception el) {
+                            el.printStackTrace();
                         }
                     }
-                    s.close();
-                } catch (FileNotFoundException el) {
-                    JOptionPane.showMessageDialog(null, "Error al leer Arcivo" + el);
-                } catch (IOException el) {
-                    el.printStackTrace();
                 }
-         }
-    
-    }//GEN-LAST:event_cajaIdKeyReleased
+                s.close();
+            } catch (FileNotFoundException el) {
+                JOptionPane.showMessageDialog(null, "Error al leer Arcivo" + el);
+            } catch (IOException el) {
+                el.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_CajaIDActionPerformed
+
+    private void CajaIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CajaIDKeyReleased
+
+    }//GEN-LAST:event_CajaIDKeyReleased
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
 
@@ -438,6 +431,7 @@ public class Comentario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CajaID;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiat;
     private javax.swing.JButton btnSalir1;
@@ -445,7 +439,6 @@ public class Comentario extends javax.swing.JFrame {
     private javax.swing.JTextArea cajaComentario;
     private javax.swing.JTextField cajaCorreo;
     private javax.swing.JTextField cajaFecha;
-    private javax.swing.JTextField cajaId;
     private javax.swing.JTextField estado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
