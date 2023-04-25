@@ -51,9 +51,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -97,13 +95,9 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Rubik", 1, 83)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("BIENVENIDO");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSalir.setBackground(new java.awt.Color(255, 0, 0));
         btnSalir.setFont(new java.awt.Font("Rubik", 1, 24)); // NOI18N
@@ -116,48 +110,12 @@ public class Menu_Principal extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICONOS/restaurante (2).png"))); // NOI18N
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(856, 376, 124, 78));
 
         jLabel11.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Salir");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1)
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(54, 54, 54))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jLabel3)
-                .addContainerGap(164, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
-                .addGap(25, 25, 25))
-        );
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(899, 463, -1, -1));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.black, java.awt.Color.black));
@@ -165,7 +123,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setMargin(new java.awt.Insets(2, 2, 2, 2));
 
-        jMenu1.setForeground(new java.awt.Color(255, 204, 51));
+        jMenu1.setForeground(new java.awt.Color(102, 255, 102));
         jMenu1.setText("Mantenimientos    ");
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("Rubik", 1, 24)); // NOI18N
@@ -236,7 +194,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setForeground(new java.awt.Color(255, 204, 51));
+        jMenu2.setForeground(new java.awt.Color(51, 51, 51));
         jMenu2.setText("Movimientos     ");
         jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.setFont(new java.awt.Font("Rubik", 1, 24)); // NOI18N
@@ -259,7 +217,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        menuProcesos.setForeground(new java.awt.Color(255, 204, 51));
+        menuProcesos.setForeground(new java.awt.Color(51, 51, 51));
         menuProcesos.setText("Procesos     ");
         menuProcesos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuProcesos.setFont(new java.awt.Font("Rubik", 1, 24)); // NOI18N
@@ -286,7 +244,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuProcesos);
 
-        jMenu5.setForeground(new java.awt.Color(255, 204, 51));
+        jMenu5.setForeground(new java.awt.Color(102, 255, 102));
         jMenu5.setText(" Consultas");
         jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu5.setFont(new java.awt.Font("Rubik", 1, 24)); // NOI18N
@@ -401,20 +359,6 @@ public class Menu_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        int resp = JOptionPane.showConfirmDialog(rootPane, "¿Desea ir al Login?", "Cerrar Ventana", JOptionPane.YES_NO_OPTION);
-
-        if (resp == JOptionPane.YES_OPTION) {
-
-            Login_Principal L = new Login_Principal();
-            L.setVisible(true);
-            dispose();
-
-        } else {
-            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        }
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
 
         Usuario U = new Usuario();
@@ -521,6 +465,20 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menuProcesosActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        int resp = JOptionPane.showConfirmDialog(rootPane, "¿Desea ir al Login?", "Cerrar Ventana", JOptionPane.YES_NO_OPTION);
+
+        if (resp == JOptionPane.YES_OPTION) {
+
+            Login_Principal L = new Login_Principal();
+            L.setVisible(true);
+            dispose();
+
+        } else {
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -568,10 +526,8 @@ public class Menu_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem consulta_Comentarios;
     private javax.swing.JMenuItem consulta_Usuario;
     private javax.swing.JMenuItem empleado;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
