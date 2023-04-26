@@ -26,7 +26,7 @@ public class Pedidos extends javax.swing.JFrame {
     public Pedidos() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Pedidis");
+        setTitle("Pedidos");
         fechapedido.setText(fecha());
 
     }

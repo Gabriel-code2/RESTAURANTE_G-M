@@ -1,6 +1,5 @@
 package MANTENIMIENTOS;
 
-
 import ARCHIVOS.Archivo_Usuario;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
@@ -311,11 +310,7 @@ public class Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_CajaTextoContrasenaActionPerformed
 
     private void CajaTextoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTextoUsuarioActionPerformed
-         if (evt.getSource() == CajaTextoUsuario) {
-             
-             CajaTextoContrasena.grabFocus();
-         }
-        
+    
     }//GEN-LAST:event_CajaTextoUsuarioActionPerformed
 
 
@@ -340,25 +335,33 @@ public class Usuario extends javax.swing.JFrame {
             nombre = CajaTextoNombre.getText();
             apell = CajaTextoApellido.getText();
 
-            if (creear == false) {
-                try {
-                    archivo.GuardarDatos(usu, contr, Nivel, nombre, apell, correo);
-                } catch (IOException ex) {
-                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+
+                if (creear == false) {
+                    
+                    archivo.GuardarDatos(usu, contr, Nivel, nombre, apell,correo);
+
+                } else {
+                    Snuevalinea = (usu + " ; " + contr + " ; " + Nivel + " ; " + nombre + " ; " + apell + " ; " + correo);
+                    archivo.Modificar(Santigualinea, Snuevalinea);
                 }
-            } else {
-                Snuevalinea = (usu + " ; " + contr + " ; " + Nivel + " ; " + nombre + " ; " + apell + " ; " + correo);
-                archivo.Modificar(Santigualinea, Snuevalinea);
+
+                CajaTextoCorreo.setText("");
+                CajaTextoUsuario.setText("");
+                CajaTextoContrasena.setText("");
+                CajaTextoNombre.setText("");
+                CajaTextoApellido.setText("");
+                CajaTextoAcceso.setText("");
+                estado.setText("");
+
+            } catch (IOException el) {
+                el.printStackTrace();
             }
-            CajaTextoCorreo.setText("");
-            CajaTextoUsuario.setText("");
-            CajaTextoContrasena.setText("");
-            CajaTextoNombre.setText("");
-            CajaTextoApellido.setText("");
-            CajaTextoAcceso.setText("");
-            estado.setText("");
             JOptionPane.showMessageDialog(null, "Registro guardado");
+
         }
+
+
     }//GEN-LAST:event_BotonGuardarUsuarioActionPerformed
 
     private void CajaTextoAccesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaTextoAccesoActionPerformed
@@ -390,6 +393,8 @@ public class Usuario extends javax.swing.JFrame {
             String contraseña = new String(CajaTextoContrasena.getPassword());
             Scanner s;
             String nv = "";
+            boolean encontrado = false;
+
             try {
                 File f = new File("Usuarios.txt");
 
@@ -456,7 +461,7 @@ public class Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_CajaTextoContrasenaKeyReleased
 
     private void btnSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalir1ActionPerformed
-            this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     /**

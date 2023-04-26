@@ -437,9 +437,9 @@ public class Reservas extends javax.swing.JFrame {
             try {
 
                 if (creear == false) {
-                    archivo.GuardarDatos(Id, fecha, Idcliente, Idmesa, fechaR, hora, auxDisponible);
+                    archivo.GuardarDatos(Id, auxDisponible, Idcliente, Idmesa, fechaR, hora, fecha);
                 } else {
-                    Snuevalinea = (Id + " ; " + fecha + " ; " + Idcliente + " ; " + Idmesa + " ; " + fechaR + " ; " + hora + " ; " + auxDisponible);
+                    Snuevalinea = (Id + " ; " + auxDisponible + " ; " + Idcliente + " ; " + Idmesa + " ; " + fechaR + " ; " + hora + " ; " + fecha);
                     archivo.Modificar(Santigualinea, Snuevalinea);
                 }
 
