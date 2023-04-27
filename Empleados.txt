@@ -1,1 +1,2 @@
 1; Manuel; Camarero; Alcantara; Ramos; 500; Foto :); 0
+2; Carlos; Mesero; Mercedez; Sosa; 700; FOTO; 0

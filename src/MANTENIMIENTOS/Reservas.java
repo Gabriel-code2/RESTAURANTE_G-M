@@ -341,17 +341,18 @@ public class Reservas extends javax.swing.JFrame {
                         sl.useDelimiter("\\s*;\\s*");
                         try {
                             if (cod == Integer.parseInt(sl.next())) {
-                                cajaFecha.setText(sl.next());
-                                cajaIdCliente.setText(sl.next());
-                                cajaIdMesa.setText(sl.next());
-                                cajaFechaReserva.setText(sl.next());
-                                cajaHora.setText(sl.next());
-
-                                if (ST.equals(sl.next())) {
+                                  if (ST.equals(sl.next())) {
                                     Si.setSelected(true);
                                 } else {
                                     NO.setSelected(true);
                                 }
+                                cajaIdCliente.setText(sl.next());
+                                cajaIdMesa.setText(sl.next());
+                                cajaFechaReserva.setText(sl.next());
+                                cajaHora.setText(sl.next());
+                                cajaFecha.setText(sl.next());
+
+                               
 
                                 encontrado = true;
                                 creear = true;
@@ -450,6 +451,7 @@ public class Reservas extends javax.swing.JFrame {
                 cajaFechaReserva.setText("");
                 cajaHora.setText("");
                 estado.setText("");
+                botones.clearSelection();
 
             } catch (IOException el) {
                 el.printStackTrace();
@@ -505,7 +507,7 @@ public class Reservas extends javax.swing.JFrame {
 
             } catch (Exception ex) {
                 cajaIdCliente.setText("");
-                JOptionPane.showMessageDialog(rootPane, "No se permiten carÃ¡cteres en el Id");
+                JOptionPane.showMessageDialog(rootPane, "No se permiten caracteres en el Id");
             }
         }
     }//GEN-LAST:event_cajaIdClienteActionPerformed

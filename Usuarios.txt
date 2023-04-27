@@ -1,3 +1,4 @@
 admin; 1234; 1; Gabriel; Tapia; Gabriel@gmail.com
 Gabriel; 1234; 0; Gabriel; Tapia; Gabriel@gmail.com
 prueba; 123; 1; Cliente; Normal; Clien1@gmail.com
+Joselito; 12345; 1; Jose; Rosa; Joselito1@gmail.com

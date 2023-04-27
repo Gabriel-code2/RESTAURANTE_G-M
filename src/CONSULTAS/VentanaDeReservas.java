@@ -69,10 +69,10 @@ public class VentanaDeReservas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 58)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(102, 255, 102));
         jLabel1.setText("Reservas Registradas");
 
         tablaRegistros.setModel(new javax.swing.table.DefaultTableModel(

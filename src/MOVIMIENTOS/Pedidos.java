@@ -56,8 +56,8 @@ public class Pedidos extends javax.swing.JFrame {
         valorPropinas = new javax.swing.JTextField();
         idCamarero = new javax.swing.JTextField();
         idMesaPedido = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        SI = new javax.swing.JRadioButton();
+        NO = new javax.swing.JRadioButton();
         estado = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -175,15 +175,17 @@ public class Pedidos extends javax.swing.JFrame {
         idMesaPedido.setForeground(new java.awt.Color(102, 102, 102));
         idMesaPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.white));
 
-        jRadioButton1.setBackground(new java.awt.Color(51, 204, 255));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jRadioButton1.setText("Si");
+        SI.setBackground(new java.awt.Color(51, 204, 255));
+        buttonGroup1.add(SI);
+        SI.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        SI.setText("Si");
+        SI.setEnabled(false);
 
-        jRadioButton2.setBackground(new java.awt.Color(51, 204, 255));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        jRadioButton2.setText("NO");
+        NO.setBackground(new java.awt.Color(51, 204, 255));
+        buttonGroup1.add(NO);
+        NO.setFont(new java.awt.Font("Leelawadee UI", 1, 24)); // NOI18N
+        NO.setText("NO");
+        NO.setEnabled(false);
 
         estado.setEditable(false);
         estado.setBackground(new java.awt.Color(51, 204, 255));
@@ -218,7 +220,7 @@ public class Pedidos extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Leelawadee UI", 1, 16)); // NOI18N
         jLabel14.setText("Guardar");
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 51));
+        jButton3.setBackground(new java.awt.Color(102, 255, 102));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/descargar.png"))); // NOI18N
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -265,9 +267,9 @@ public class Pedidos extends javax.swing.JFrame {
                         .addGap(108, 108, 108)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(SI)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton2))
+                                .addComponent(NO))
                             .addComponent(idcliente, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Idpedido, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -295,7 +297,7 @@ public class Pedidos extends javax.swing.JFrame {
                             .addComponent(valorPropinas, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(valoritbis, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                 .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -339,9 +341,9 @@ public class Pedidos extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel10)
                     .addComponent(idMesaPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                    .addComponent(SI)
+                    .addComponent(NO))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,7 +357,7 @@ public class Pedidos extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(jLabel12))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -399,11 +401,11 @@ public class Pedidos extends javax.swing.JFrame {
 
             String Id = "";
             String fecha = "", Idcliente = "", Idmesa = "", Camarero = "", mesa = "";
-            String fechaR = "", hora = "", ValorP = "", ValorItbis = "", Concep = "",propi="";
-            String Snuevalinea = "";
+            String fechaR = "", hora = "", ValorP = "", ValorItbis = "", Concep = "", propi = "";
+            String Snuevalinea = "", ST = "";
 
             ArchivoPedidos archivo = new ArchivoPedidos();
-
+            NO.setSelected(true);
             Id = Idpedido.getText();
             fecha = fechapedido.getText();
             Idcliente = idcliente.getText();
@@ -414,12 +416,17 @@ public class Pedidos extends javax.swing.JFrame {
             Camarero = idCamarero.getText();
             mesa = idMesaPedido.getText();
 
+            if (NO.isSelected()) {
+                ST = "NO";
+            } else {
+                ST = "Si";
+            }
             try {
 
                 if (creear == false) {
-                    archivo.GuardarDatos(Id, fecha, Idcliente, ValorP, ValorItbis, propi, Concep, Camarero, mesa);
+                    archivo.GuardarDatos(Id, fecha, Idcliente, ValorP, ST, ValorItbis, propi, Concep, Camarero, mesa);
                 } else {
-                    Snuevalinea = (Id + " ; " + fecha + " ; " + Idcliente + " ; " + ValorP + " ; " + ValorItbis + " ; " + propi + " ; " + Concep + " ; " + Camarero + " ; " + mesa);
+                    Snuevalinea = (Id + " ; " + fecha + " ; " + Idcliente + " ; " + ValorP + " ; " + ST + " ; " + ValorItbis + " ; " + propi + " ; " + Concep + " ; " + Camarero + " ; " + mesa);
                     archivo.Modificar(Santigualinea, Snuevalinea);
                 }
 
@@ -445,11 +452,10 @@ public class Pedidos extends javax.swing.JFrame {
 
     private void IdpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdpedidoActionPerformed
         if (evt.getSource() == Idpedido) {
-            int cod;
 
-            cod = Integer.parseInt(Idpedido.getText());
-                boolean encontrado = false;
-
+            boolean encontrado = false;
+            int cod = Integer.parseInt(Idpedido.getText());
+            String ST = "NO";
             Scanner s;
 
             try {
@@ -465,12 +471,19 @@ public class Pedidos extends javax.swing.JFrame {
                         Scanner sl = new Scanner(linea);
                         sl.useDelimiter("\\s*;\\s*");
                         try {
+
                             if (cod == Integer.parseInt(sl.next())) {
                                 fechapedido.setText(sl.next());
                                 idcliente.setText(sl.next());
-                                valorPropinas.setText(sl.next());
                                 valorpedido.setText(sl.next());
+                                if (ST.equals(sl.next())) {
+                                    NO.setSelected(true);
+                                } else {
+                                    SI.setSelected(true);
+                                }
                                 valoritbis.setText(sl.next());
+                                valorPropinas.setText(sl.next());
+
                                 conceptopedido.setText(sl.next());
                                 idCamarero.setText(sl.next());
                                 idMesaPedido.setText(sl.next());
@@ -547,7 +560,6 @@ public class Pedidos extends javax.swing.JFrame {
                         if (!encontrado) {
                             JOptionPane.showMessageDialog(this, "EL CLIENTE NO TIENE RESERVA", "Error", JOptionPane.ERROR_MESSAGE);
 
-                           
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "El Cliente hizo una Reserva el: " + nombreTipo);
                             JOptionPane.showMessageDialog(rootPane, "La mesa reservada fue la numero: " + mesa);
@@ -567,7 +579,7 @@ public class Pedidos extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "No se permiten caracteres en el Id");
             }
         }
-        
+
     }//GEN-LAST:event_idclienteActionPerformed
 
     private void idCamareroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCamareroActionPerformed
@@ -580,6 +592,7 @@ public class Pedidos extends javax.swing.JFrame {
             boolean encontrado = false;
             try {
                 int Id_Tipo = Integer.parseInt(auxid);
+                String TP = "";
                 try {
 
                     File f = new File("Empleados.txt");
@@ -594,6 +607,7 @@ public class Pedidos extends javax.swing.JFrame {
                             if (Id_Tipo == Integer.parseInt(s1.next())) {
                                 encontrado = true;
                                 nombreTipo = s1.next();
+                                TP = s1.next();
 
                                 if (empleado.equals(s1.next())) {
                                     JOptionPane.showMessageDialog(rootPane, "El Empleado es Camarero");
@@ -609,10 +623,12 @@ public class Pedidos extends javax.swing.JFrame {
                         if (!encontrado) {
                             JOptionPane.showMessageDialog(this, "El EMPLEADO NO EXISTE", "Error", JOptionPane.ERROR_MESSAGE);
 
-                        } 
+                        } else {
+                            
+                            JOptionPane.showMessageDialog(rootPane, "El empleado es " + TP);
 
-                    } else {
-                        JOptionPane.showMessageDialog(rootPane, "El EMPLEADO NO EXISTE");
+                        }
+
                     }
                 } catch (IOException e) {
                     System.out.println("No se pudo leer el archivo correctamente\n" + e);
@@ -688,6 +704,8 @@ public class Pedidos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Idpedido;
+    private javax.swing.JRadioButton NO;
+    private javax.swing.JRadioButton SI;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField conceptopedido;
     private javax.swing.JTextField estado;
@@ -712,8 +730,6 @@ public class Pedidos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField valorPropinas;
     private javax.swing.JTextField valoritbis;
     private javax.swing.JTextField valorpedido;

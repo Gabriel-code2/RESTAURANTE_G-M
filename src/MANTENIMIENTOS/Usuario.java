@@ -71,7 +71,7 @@ public class Usuario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel1.setText("Usuario:");
 
-        CajaTextoUsuario.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoUsuario.setFont(new java.awt.Font("Liberation Mono", 1, 14)); // NOI18N
         CajaTextoUsuario.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         CajaTextoUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,7 @@ public class Usuario extends javax.swing.JFrame {
 
         CajaTextoAcceso.setEditable(false);
         CajaTextoAcceso.setBackground(new java.awt.Color(255, 255, 255));
-        CajaTextoAcceso.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoAcceso.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         CajaTextoAcceso.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoAcceso.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         CajaTextoAcceso.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +102,7 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
 
-        CajaTextoContrasena.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoContrasena.setFont(new java.awt.Font("Liberation Mono", 1, 14)); // NOI18N
         CajaTextoContrasena.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoContrasena.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         CajaTextoContrasena.addActionListener(new java.awt.event.ActionListener() {
@@ -127,14 +127,14 @@ public class Usuario extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel4.setText("Acceso:");
 
-        CajaTextoApellido.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoApellido.setFont(new java.awt.Font("Liberation Mono", 1, 14)); // NOI18N
         CajaTextoApellido.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoApellido.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel5.setText("Apellido:");
 
-        CajaTextoNombre.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoNombre.setFont(new java.awt.Font("Liberation Mono", 1, 14)); // NOI18N
         CajaTextoNombre.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         CajaTextoNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +146,7 @@ public class Usuario extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 22)); // NOI18N
         jLabel6.setText("Correo:");
 
-        CajaTextoCorreo.setFont(new java.awt.Font("Liberation Mono", 0, 14)); // NOI18N
+        CajaTextoCorreo.setFont(new java.awt.Font("Liberation Mono", 1, 14)); // NOI18N
         CajaTextoCorreo.setForeground(new java.awt.Color(51, 51, 51));
         CajaTextoCorreo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
@@ -276,7 +276,7 @@ public class Usuario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CajaTextoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

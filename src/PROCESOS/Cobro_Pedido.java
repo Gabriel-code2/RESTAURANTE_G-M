@@ -49,15 +49,18 @@ public class Cobro_Pedido extends javax.swing.JFrame {
             parrafo.setAlignment(1);
             documento.add(parrafo);
 
-            documento.add(new Paragraph("|ID del Pedido---->>:" + ID.getText()));
-            documento.add(new Paragraph("|Total a pagar--->>:" + A_Pagar.getText()));
-            documento.add(new Paragraph("|Resivido---->>:" + pago.getText()));
-            documento.add(new Paragraph("|Devolver---->>:" + devuelta.getText()));
+            documento.add(new Paragraph("  ID del Pedido---->>:" + ID.getText()));
+            documento.add(new Paragraph("  Total a pagar--->>:" + A_Pagar.getText()));
+            documento.add(new Paragraph("  Resivido---->>:" + pago.getText()));
+            documento.add(new Paragraph("  Devolver---->>:" + devuelta.getText()));
 
 
 
             documento.close();
             JOptionPane.showMessageDialog(null, "Archivo PDF creado correctamente", "Información", 1);
+            A_Pagar.setText("");
+            pago.setText("");
+            devuelta.setText("");
         } else {
             JOptionPane.showMessageDialog(null, "Debe llenar todos los campos", "Atención", 2);
         }
@@ -374,6 +377,7 @@ public class Cobro_Pedido extends javax.swing.JFrame {
                                 id = s1.next();
 
                                 ValorPedido = Integer.parseInt(s1.next());
+                                String Dis =s1.next();
                                 ValorItbis = Integer.parseInt(s1.next());
                                 ValorPropina = Integer.parseInt(s1.next());
 

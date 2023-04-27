@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
 
 public class ArchivoPedidos {
     
-     public void GuardarDatos(String Id, String fecha, String Idcliente, String valorPedido, String valorItbis, String valorPropinaP, String concepto, String IdCamarero, String IdMesaP) throws IOException {
+     public void GuardarDatos(String Id, String fecha, String Idcliente, String valorPedido,String status, String valorItbis, String valorPropinaP, String concepto, String IdCamarero, String IdMesaP) throws IOException {
 
         try {
             FileWriter F1 = new FileWriter("Pedidos.txt", true);
 
             PrintWriter pw = new PrintWriter(F1);
-            pw.println(Id + "; " + fecha + "; " + Idcliente + "; " + valorPedido + "; " + valorItbis + "; " +valorPropinaP + "; " +concepto  + "; " + IdCamarero + "; " +IdMesaP);
+            pw.println(Id + "; " + fecha + "; " + Idcliente + "; " + valorPedido + "; "+status + "; " + valorItbis + "; " +valorPropinaP + "; " +concepto  + "; " + IdCamarero + "; " +IdMesaP);
             pw.close();
 
         } catch (Exception ex) {

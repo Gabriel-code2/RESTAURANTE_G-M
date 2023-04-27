@@ -1,6 +1,5 @@
 package MANTENIMIENTOS;
 
-
 import ARCHIVOS.ArchivoProductos;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -24,12 +23,11 @@ public class Producto extends javax.swing.JFrame {
     boolean encontrado = false;
     String Santigualinea;
     boolean auxDisponible;
-        public final String itb = "Si";
-
+    public final String itb = "Si";
 
     public Producto() {
         initComponents();
-                setTitle("Productos");
+        setTitle("Productos");
         setLocationRelativeTo(null);
     }
 
@@ -205,29 +203,28 @@ public class Producto extends javax.swing.JFrame {
                                 .addComponent(Si)
                                 .addGap(31, 31, 31)
                                 .addComponent(No))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addGap(36, 36, 36))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addGap(65, 65, 65)))
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel2))
-                                    .addGap(22, 22, 22)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(tipo, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                            .addComponent(precio))
-                                        .addComponent(existencia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(descripciom, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel5)
+                                            .addGap(36, 36, 36))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addGap(65, 65, 65)))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel2))
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tipo, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                        .addComponent(precio))
+                                    .addComponent(existencia, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(descripciom, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(32, 32, 32)
+                                .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -252,14 +249,14 @@ public class Producto extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
-                            .addComponent(idProducto)))
-                    .addComponent(estado))
-                .addGap(45, 45, 45)
+                            .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(descripciom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -309,7 +306,7 @@ public class Producto extends javax.swing.JFrame {
 
     private void btnGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar2ActionPerformed
         if (idProducto.getText().equals("") || descripciom.getText().equals("") || tipo.getText().equals("")
-                || precio.getText().equals("") || !Si.isSelected() && !No.isSelected())    {
+                || precio.getText().equals("") || !Si.isSelected() && !No.isSelected()) {
 
             JOptionPane.showMessageDialog(null, "Por Favor Rellene Todos los campos ");
         } else {
@@ -348,7 +345,6 @@ public class Producto extends javax.swing.JFrame {
                 tipo.setText("");
                 botones.clearSelection();
 
-
                 precio.setText("");
                 estado.setText("");
 
@@ -382,15 +378,16 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_idProductoKeyReleased
 
     private void tipoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tipoKeyReleased
-      
+
 
     }//GEN-LAST:event_tipoKeyReleased
 
     private void idProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idProductoActionPerformed
-     
-          if (evt.getSource() == idProducto) {
-             
+
+        if (evt.getSource() == idProducto) {
+
             int cod;
+            boolean encontrado = false;
 
             cod = Integer.parseInt(idProducto.getText());
 
@@ -414,20 +411,20 @@ public class Producto extends javax.swing.JFrame {
                                 existencia.setText(sl.next());
                                 tipo.setText(sl.next());
                                 precio.setText(sl.next());
-                                
-                                   String auxitbis = "";
-                                    if (itb.equals(sl.next())) {
-                                        Si.setSelected(true);
-                                        auxitbis = "Si";
-                                    } else {
-                                        No.setSelected(true);
-                                        auxitbis = "NO";
-                                    }
+                                existencia.setText("0");
+                                String auxitbis = "";
+                                if (itb.equals(sl.next())) {
+                                    Si.setSelected(true);
+                                    auxitbis = "Si";
+                                } else {
+                                    No.setSelected(true);
+                                    auxitbis = "NO";
+                                }
 
                                 encontrado = true;
                                 creear = true;
 
-                                Santigualinea = idProducto.getText() + "; " + descripciom.getText() + "; " + tipo.getText() + "; " + precio.getText() + "; " + existencia.getText()+ "; " +auxitbis ;
+                                Santigualinea = idProducto.getText() + "; " + descripciom.getText() + "; " + tipo.getText() + "; " + precio.getText() + "; " + existencia.getText() + "; " + auxitbis;
 
                                 estado.setText("MODIFICANDO");
 
@@ -437,7 +434,7 @@ public class Producto extends javax.swing.JFrame {
                                 existencia.setText("");
                                 tipo.setText("");
                                 precio.setText("");
-                                
+
                                 encontrado = false;
                                 creear = false;
                                 estado.setText("CREANDO");
@@ -458,7 +455,7 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_idProductoActionPerformed
 
     private void tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoActionPerformed
-               if (evt.getSource() == tipo) {
+        if (evt.getSource() == tipo) {
             String auxid = tipo.getText();
             String nombreTipo = "";
 
@@ -484,14 +481,15 @@ public class Producto extends javax.swing.JFrame {
                         s.close();
 
                         if (!encontrado) {
-                            JOptionPane.showMessageDialog(rootPane, "El cliente NO Existe");
-                          
+                            JOptionPane.showMessageDialog(this, "El Producto no Existe", "Error", JOptionPane.ERROR_MESSAGE);
+
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "El Nombre del Producto es: " + nombreTipo);
                         }
 
                     } else {
-                        JOptionPane.showMessageDialog(rootPane, "El clinete no Existe");
+                        JOptionPane.showMessageDialog(this, "El Producto no Existe", "Error", JOptionPane.ERROR_MESSAGE);
+
                     }
                 } catch (IOException e) {
                     System.out.println("No se pudo leer el archivo correctamente\n" + e);
@@ -499,11 +497,10 @@ public class Producto extends javax.swing.JFrame {
 
             } catch (Exception ex) {
                 tipo.setText("");
-                JOptionPane.showMessageDialog(rootPane, "No se permiten carÃ¡cteres en el Id");
             }
         }
-        
-        
+
+
     }//GEN-LAST:event_tipoActionPerformed
 
     /**

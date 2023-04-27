@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-
 public class Empleado extends javax.swing.JFrame {
 
     boolean creear;
@@ -17,7 +16,6 @@ public class Empleado extends javax.swing.JFrame {
     String pro;
     String num;
 
-  
     public Empleado() {
         initComponents();
         setTitle("Empleados");
@@ -65,6 +63,8 @@ public class Empleado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel1.setText("ID Empleado:");
 
+        cajaId.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
+        cajaId.setForeground(new java.awt.Color(51, 51, 51));
         cajaId.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         cajaId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -75,26 +75,33 @@ public class Empleado extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel2.setText("Nombre:");
 
+        cajaNombre.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
+        cajaNombre.setForeground(new java.awt.Color(51, 51, 51));
         cajaNombre.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel3.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel3.setText("Apellido 1:");
 
+        cajaApellido1.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
         cajaApellido1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel4.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel4.setText("Apellido 2:");
 
+        cajaApellido2.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
         cajaApellido2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel5.setText("Tipo:");
 
+        cajaTipo.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
         cajaTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel6.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel6.setText("Propinas:");
 
+        cajaPropina.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
+        cajaPropina.setForeground(new java.awt.Color(51, 51, 51));
         cajaPropina.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         cajaPropina.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -105,6 +112,8 @@ public class Empleado extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
         jLabel7.setText("Foto:");
 
+        cajaFoto.setFont(new java.awt.Font("Liberation Mono", 0, 18)); // NOI18N
+        cajaFoto.setForeground(new java.awt.Color(51, 51, 51));
         cajaFoto.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
 
         jLabel8.setFont(new java.awt.Font("Leelawadee UI", 1, 20)); // NOI18N
@@ -112,6 +121,7 @@ public class Empleado extends javax.swing.JFrame {
 
         cajaPorPropina.setEditable(false);
         cajaPorPropina.setBackground(new java.awt.Color(255, 255, 255));
+        cajaPorPropina.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         cajaPorPropina.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 255, 255), new java.awt.Color(255, 255, 255)));
         cajaPorPropina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,7 +296,7 @@ public class Empleado extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cajaPorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -319,14 +329,14 @@ public class Empleado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void cajaIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaIdKeyReleased
-        
+
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             int cod;
 
             cod = Integer.parseInt(cajaId.getText());
 
             Scanner s;
-                boolean encontrado = false;
+            boolean encontrado = false;
 
             try {
                 File f = new File("Empleados.txt");
@@ -343,9 +353,9 @@ public class Empleado extends javax.swing.JFrame {
                         try {
                             if (cod == Integer.parseInt(sl.next())) {
                                 cajaNombre.setText(sl.next());
+                                cajaTipo.setText(sl.next());
                                 cajaApellido1.setText(sl.next());
                                 cajaApellido2.setText(sl.next());
-                                cajaTipo.setText(sl.next());
                                 cajaPropina.setText(sl.next());
                                 cajaFoto.setText(sl.next());
                                 cajaPorPropina.setText(sl.next());
@@ -399,7 +409,7 @@ public class Empleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
+
         if (cajaId.getText().equals("") || cajaApellido1.getText().equals("") || cajaApellido2.getText().equals("") || cajaTipo.getText().equals("")
                 || cajaPropina.getText().equals("") || cajaFoto.getText().equals("")) {
 
@@ -407,7 +417,7 @@ public class Empleado extends javax.swing.JFrame {
         } else {
 
             String Id = "";
-            String nombre = "", apell1 = "", apell2 = "", tipo = "",foto="";
+            String nombre = "", apell1 = "", apell2 = "", tipo = "", foto = "";
             String propina = "", PorPropina = "";
             String Snuevalinea = "";
 
@@ -419,13 +429,12 @@ public class Empleado extends javax.swing.JFrame {
             tipo = cajaTipo.getText();
             propina = cajaPropina.getText();
             foto = cajaFoto.getText();
-            
-              if (cajaPorPropina.getText().isEmpty()) {
-            cajaPorPropina.setText("0");
-        }
 
-        PorPropina= cajaPorPropina.getText();
+            if (cajaPorPropina.getText().isEmpty()) {
+                cajaPorPropina.setText("0");
+            }
 
+            PorPropina = cajaPorPropina.getText();
 
             try {
 
@@ -461,8 +470,7 @@ public class Empleado extends javax.swing.JFrame {
 
     private void cajaPorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaPorPropinaActionPerformed
 
-       
-        
+
     }//GEN-LAST:event_cajaPorPropinaActionPerformed
 
     private void cajaPropinaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cajaPropinaKeyReleased
