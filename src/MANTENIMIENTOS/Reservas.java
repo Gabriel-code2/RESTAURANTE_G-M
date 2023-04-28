@@ -493,7 +493,6 @@ public class Reservas extends javax.swing.JFrame {
 
                             Cliente C = new Cliente();
                             C.setVisible(true);
-                            dispose();
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "El Nombre del cliente es: " + nombreTipo);
                         }
